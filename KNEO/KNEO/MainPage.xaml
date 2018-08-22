@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:KNEO"
+             x:Class="KNEO.MainPage">
+    <ContentPage.Content>
+        <Grid BackgroundColor="White"
+            Margin="10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.2*"></RowDefinition>
+                <RowDefinition Height="0.5*"></RowDefinition>
+                <RowDefinition Height="0.1*"></RowDefinition>
+                <RowDefinition Height="0.15*"></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <StackLayout Orientation="Horizontal"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="FillAndExpand"
+                Margin="10"
+                Padding="5"
+                Grid.Column="0"
+                Grid.Row="0">
+                <Frame OutlineColor="Black"
+                    HorizontalOptions="FillAndExpand">
+                    <Image Source="phone.png">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="BtnCall_OnClicked" />
+                        </Image.GestureRecognizers>
+                    </Image>
+                </Frame>
+                <Frame OutlineColor="Black"
+                    HorizontalOptions="FillAndExpand">
+                    <Image Source="mail.png">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="BtnEmail_OnClicked" />
+                        </Image.GestureRecognizers>
+                    </Image>
+                </Frame>
+                <Frame OutlineColor="Black"
+                    HorizontalOptions="FillAndExpand">
+                    <Image Source="home.png">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="BtnWeb_OnClicked" />
+                        </Image.GestureRecognizers>
+                    </Image>
+                </Frame>
+            </StackLayout>
+            <Image Source="KNEO.png" 
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="FillAndExpand"
+                Grid.Column="0"
+                Grid.Row="1"/>
+            <Label Text="You are listening to KNEO 91.7"
+                TextColor="Black"
+                HorizontalOptions="CenterAndExpand"
+                VerticalOptions="CenterAndExpand"
+                Grid.Column="0"
+                Grid.Row="2" 
+                x:Name="StatusLabel"/>
+            <Frame OutlineColor="Black"
+                HorizontalOptions="FillAndExpand"
+                Grid.Column="0"
+                Grid.Row="3"
+                Margin="10"
+                Padding="10">
+                <StackLayout Orientation="Vertical">
+                    <Label Text="Volume"
+                        TextColor="Black"
+                        HorizontalOptions="CenterAndExpand"
+                        VerticalOptions="CenterAndExpand"/>
+                    <Slider Minimum="0"
+                        Maximum="1"
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="FillAndExpand"
+                        x:Name="VolumeSlider"
+                        ValueChanged="VolumeSlider_OnValueChanged"/>
+                </StackLayout>
+            </Frame>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
